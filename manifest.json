@@ -1,9 +1,10 @@
 ﻿{
     "name": "Age Calculator",
     "short_name": "AgeCalc",
-    "description": "Calculate your exact age with additional details.",
+    "description": "Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!.",
     "start_url": "index.html",
     "display": "standalone",
+    "offline_enabled": "true",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
     "icons": [

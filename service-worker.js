@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = 'age-calculator-cache-v1';
+﻿const CACHE_NAME = 'age-calculator-cache';
 const urlsToCache = [
   '/',
   '/index.html',
