@@ -28,12 +28,6 @@
     "standalone",
     "browser"
   ],
-  "protocol_handlers": [
-    {
-      "protocol": "web+agecalc",
-      "url": "/handle-protocol?data=%s"
-    }
-  ],
   "categories": [
     "games",
     "productivity",
