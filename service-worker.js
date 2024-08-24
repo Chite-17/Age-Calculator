@@ -96,5 +96,12 @@ if ('serviceWorker' in navigator && 'SyncManager' in window) {
         console.error('Background sync registration failed:', err);
     });
 }
+if ('Notification' in window && navigator.serviceWorker) {
+    Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+            subscribeUserToPush();
+        }
+    });
+}
 
 

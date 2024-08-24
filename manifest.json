@@ -20,6 +20,12 @@
       "type": "image/png"
     },
     {
+      "src": "icons/icon-any-512x512-.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "icons/maskable-icon.png",
       "sizes": "512x512",
       "type": "image/png",
@@ -35,7 +41,9 @@
     "standalone",
     "browser"
   ],
-  "categories": [
+  "prefer_related_applications": [ "false"
+],
+"categories": [
     "games",
     "productivity",
     "utilities"
