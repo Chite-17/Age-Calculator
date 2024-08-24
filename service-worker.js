@@ -7,6 +7,9 @@ const urlsToCache = [
   '/manifest.json',
   '/icons/ikon.png',
   '/icons/ikon2.png',
+  '/apple-touch-icon.png',
+  '/screenshots/screenshot1.png',
+  '/screenshots/screenshot2.png',
   '/background.jpg'
 ];
 
@@ -59,3 +62,39 @@ self.addEventListener('fetch', event => {
     );
   }
 });
+self.addEventListener('sync', event => {
+    if (event.tag === 'sync-age-calculation') {
+        event.waitUntil(syncAgeCalculation());
+    }
+});
+async function syncAgeCalculation() {
+    // Code to sync data with the server
+    try {
+        // Perform the necessary actions (e.g., POST data to server)
+        console.log('Background sync in progress...');
+        // Example: Sending data to the server
+        const response = await fetch('/sync', {
+            method: 'POST',
+            body: JSON.stringify({ /* Your data */ }),
+            headers: { 'Content-Type': 'application/json' }
+        });
+        if (!response.ok) {
+            throw new Error('Failed to sync');
+        }
+        console.log('Background sync completed.');
+    } catch (error) {
+        console.error('Background sync failed:', error);
+        throw error;
+    }
+}
+if ('serviceWorker' in navigator && 'SyncManager' in window) {
+    navigator.serviceWorker.ready.then(registration => {
+        return registration.sync.register('sync-age-calculation');
+    }).then(() => {
+        console.log('Background sync registered');
+    }).catch(err => {
+        console.error('Background sync registration failed:', err);
+    });
+}
+
+

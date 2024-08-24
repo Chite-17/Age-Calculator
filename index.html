@@ -3,47 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Chite Munthali">
+  <meta name="keywords" content="age calculator, birth year, zodiac, countdown, day of the week, exact age, age in weeks, leap year, total hours, total seconds">
+  <meta name="robots" content="index, follow">
+  <meta name="og:title" content="Age Calculator">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://age-kalkulator.netlify.app/">
+  <meta name="og:description" content="Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Age Calculator">
+  <meta name="twitter:description" content="Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Age Calculator">
+  <meta name="theme-color" content="#333333">
+  <meta name="application-name" content="Age Calculator">
+  <meta name="theme-color" content="#007bff">
   <meta name="description" content="Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!">
+
   <title>Age Calculator</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/ikon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/apple-touch-icon.png">
+
 </head>
 <body>
-  <div class="background">
-    <div class="overlay"></div>
-    <div class="container">
-      <h1>Age Calculator</h1>
-      <form id="age-form">
-        <label for="birthdate"><span class="icon">📅</span> Enter your birthdate:</label>
-        <input type="date" id="birthdate" required>
-        <button type="submit">Calculate Age</button>
-      </form>
-      <div class="results">
-        <p id="result"></p>
-        <p id="zodiac"></p>
-        <p id="countdown"></p>
-        <p id="day-of-week"></p>
-        <p id="exact-age"></p>
-        <p id="age-in-weeks"></p>
-        <p id="leap-year"></p>
-        <p id="total-hours"></p>
-        <p id="total-seconds"></p>
-      </div>
+<div class="background">
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Age Calculator</h1>
+    <form id="age-form">
+      <label for="birthdate"><span class="icon">📅</span> Enter your birthdate:</label>
+      <input type="date" id="birthdate" required>
+      <button type="submit">Calculate Age</button>
+    </form>
+    <div class="results">
+      <p id="result"></p>
+      <p id="zodiac"></p>
+      <p id="countdown"></p>
+      <p id="day-of-week"></p>
+      <p id="exact-age"></p>
+      <p id="age-in-weeks"></p>
+      <p id="leap-year"></p>
+      <p id="total-hours"></p>
+      <p id="total-seconds"></p>
     </div>
   </div>
-  <script src="app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, error => {
-            console.log('ServiceWorker registration failed: ', error);
-          });
-      });
-    }
-  </script>
+</div>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+  }
+</script>
 </body>
 </html>

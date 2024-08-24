@@ -3,6 +3,7 @@
   "short_name": "Age Calc",
   "description": "Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!.",
   "start_url": "index.html",
+  "scope": "/",
   "display": "standalone",
   "offline_enabled": "true",
   "background_color": "#ffffff",
@@ -17,6 +18,12 @@
       "src": "icons/ikon2.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "id": "\"/age-calculator-pwa",
@@ -32,5 +39,20 @@
     "games",
     "productivity",
     "utilities"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot-1024.png",
+      "sizes": "1024x1536",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/screenshot-512.png",
+      "sizes": "512x768",
+      "type": "image/png"
+    }
   ]
 }
