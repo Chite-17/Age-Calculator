@@ -103,5 +103,21 @@ if ('Notification' in window && navigator.serviceWorker) {
         }
     });
 }
+self.addEventListener('periodicsync', event => {
+    if (event.tag === 'content-sync') {
+        event.waitUntil(updateContent());
+    }
+});
+
+async function updateContent() {
+    try {
+        const response = await fetch('/api/get-latest-content');
+        const data = await response.json();
+        // Process and cache the data as needed
+        console.log('Content updated in the background:', data);
+    } catch (err) {
+        console.error('Error during content sync:', err);
+    }
+}
 
 
