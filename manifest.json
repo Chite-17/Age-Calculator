@@ -1,6 +1,7 @@
 ﻿{
   "name": "Age Calculator",
   "short_name": "Age Calc",
+  "version": "1.0.0",
   "description": "Find out how old you are with our age calculator app. Get your age in years, months, and days, and learn fun facts about your birth year!.",
   "start_url": "index.html",
   "scope": "/",
@@ -41,9 +42,10 @@
     "standalone",
     "browser"
   ],
-  "prefer_related_applications": [ "false"
-],
-"categories": [
+  "related_applications": [],
+  "prefer_related_applications": false,
+
+  "categories": [
     "games",
     "productivity",
     "utilities"
