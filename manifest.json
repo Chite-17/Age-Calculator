@@ -28,6 +28,11 @@
       "purpose": "any"
     },
     {
+      "src": "icons/splash.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
       "src": "icons/maskable-icon.png",
       "sizes": "512x512",
       "type": "image/png",
