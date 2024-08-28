@@ -5,7 +5,7 @@
   "start_url": "index.html",
   "version": "1.0.0",
   "scope": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "offline_enabled": "true",
   "background_color": "#ffffff",
   "theme_color": "#007bff",
@@ -26,11 +26,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-    },
-    {
-      "src": "icons/splash.png",
-      "sizes": "750x1334",
-      "type": "image/png"
     },
     {
       "src": "icons/maskable-icon.png",
