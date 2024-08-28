@@ -10,6 +10,11 @@
   "background_color": "#ffffff",
   "theme_color": "#007bff",
   "prefer_related apps": "false",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://age-kalkulator.netlify.app/manifest.json",
+  ],
   "icons": [
     {
       "src": "icons/icon.png",
