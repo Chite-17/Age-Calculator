@@ -13,7 +13,8 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "id": "app.netlify.age_kalkulator.twa"
+      "id": "app.netlify.age_kalkulator.twa",
+      "url": "https://age-kalkulator.netlify.app/manifest.json"
     }
   ],
   "icons": [
