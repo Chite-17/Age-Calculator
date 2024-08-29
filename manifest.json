@@ -13,7 +13,7 @@
   "related_applications": [
     {
       "platform": "webapp",
-      "url": "https://age-kalkulator.netlify.app/manifest.json"
+      "id": "app.netlify.age_kalkulator.twa"
     }
   ],
   "icons": [
@@ -28,7 +28,7 @@
       "type": "image/png"
     },
     {
-      "src": "icons/icon-any.png",
+      "src": "icons/any-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
@@ -45,7 +45,7 @@
   "lang": "en",
   "orientation": "any",
   "edge_side_panel": {
-    "preferred_width": 480
+    "preferred_width": 360
   },
   "display_override": [
     "window-controls-overlay",

@@ -1,8 +1,8 @@
 [{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.netlify.age_kalkulator.twa",
-        "sha256_cert_fingerprints": ["23:35:A7:5A:A9:9C:52:9D:A6:27:54:87:EE:39:12:77:A1:01:53:23:1D:22:1D:86:77:A7:B3:10:B8:86:AA:9E"]
-      }
-    }]
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.netlify.age_kalkulator.twa",
+    "sha256_cert_fingerprints": ["F1:CA:C2:2E:51:5C:CE:AE:89:5E:9A:FB:9D:7B:C9:DD:96:0C:8B:56:4C:A1:8D:E2:D6:7A:DC:D3:BD:CD:0B:63"]
+  }
+}]
