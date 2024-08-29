@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "app.netlify.age_kalkulator.twa",
-    "sha256_cert_fingerprints": ["F1:CA:C2:2E:51:5C:CE:AE:89:5E:9A:FB:9D:7B:C9:DD:96:0C:8B:56:4C:A1:8D:E2:D6:7A:DC:D3:BD:CD:0B:63"]
+    "sha256_cert_fingerprints": ["70:56:C1:2D:0D:94:99:AD:97:15:5B:DF:3E:73:91:0E:B9:81:1C:22:D7:DB:BA:3D:0A:09:4F:E4:4A:4D:97:20"]
   }
 }]
