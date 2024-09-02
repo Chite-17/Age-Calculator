@@ -13,50 +13,57 @@ const urlsToCache = [
   '/background.jpg'
 ];
 
-// const offlineFallbackPage = "index.html";
+// This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
-   self.addEventListener("message", (event) => {
-     if (event.data && event.data.type === "SKIP_WAITING") {
-       self.skipWaiting();
-     }
-   });
+const CACHE = "pwabuilder-offline-page";
 
-   self.addEventListener('install', function (event) {
-     event.waitUntil(
-       caches.open(CACHE_NAME)
-         .then(function(cache) {
-           console.log('Opened cache')
-         return cache.addAll(urlsToCache);
-          })
-     );
-   });
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
-   self.addEventListener('fetch', function(event) {
-        event.respondWith(
-           caches.match(event.request)
-             .then(function(response) {
-         if (response) {
-              return response;
-         }
-         return fetch(event.request).catch(function() {
-             return caches.match('/index.html');
-          });
-         })
-     );
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "index.html";
 
-   });
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
 
-   self.addEventListener('activate',function(event) {
-       var cacheWhitelist = [CACHE_NAME];
+self.addEventListener('install', async (event) => {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((cache) => cache.add(offlineFallbackPage))
+  );
+});
 
-       event.waitUntil(
-         caches.keys().then(function(keyList) {
-           return Promise.all(keyList.map(function(key) {
-             if (cacheWhitelist.indexOf(key) === -1) {
-               return caches.delete(key);
-             }
-           }));
-        })
-       );
-   });This is the "Offline page" service worker
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
 
+workbox.routing.registerRoute(
+  new RegExp('/*'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: CACHE
+  })
+);
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
+  }
+});
